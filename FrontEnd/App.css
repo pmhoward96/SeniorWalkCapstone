@@ -1,0 +1,28 @@
+.App {
+  /*text-align: center;*/
+}
+
+.App-title {
+  text-align: center;
+  background-color: #a31d16;
+}
+
+.App-search {
+  margin-left: 20px;
+}
+
+.App-button{
+  float: left;
+  margin-left: 20px;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
