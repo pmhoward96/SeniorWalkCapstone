@@ -24,8 +24,6 @@ pip install django-filter
 // HEAD TO THE FOLLOWIN DIRECTORY
 cd /vagrant/src/
 
-// RUN APPLICATION
-python manage.py runserver 0.0.0.0:8001
 
 
 
@@ -42,3 +40,7 @@ python manage.py makemigrations 'senior_walk_app'
 python manage.py migrate
 //CREATING A SUPER CLASS TO LOGIN AS (localhost:8001/admin)
 python manage.py createsuperuser
+
+
+// RUN APPLICATION
+python manage.py runserver 0.0.0.0:8001
