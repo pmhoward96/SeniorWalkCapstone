@@ -9,3 +9,6 @@ class Student(models.Model):
   long = models.DecimalField( max_digits=8, decimal_places=5, blank = True,  null = True)
   # number = models.IntegerField(default=0)
   # active = models.BooleanField(default=True)
+  def __str__(self):
+      fullName= self.Lname + ' ' + self.Fname
+      return fullName
