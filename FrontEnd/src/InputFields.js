@@ -35,7 +35,7 @@ export class InputFields extends React.Component {
 
         // preparing list of dates for drop down select
         let firstYear = 1850;
-        let lastYear = 2016;
+        let lastYear = 2015;
         let years = [];
         for (let i = firstYear; i <= lastYear; i++) {
             years.push(i);
