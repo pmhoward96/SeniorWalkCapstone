@@ -6,7 +6,7 @@ export class InputFields extends React.Component {
 
         this.state = {
             name: '',
-            year: 2016
+            year: 2017
         };
 
         this.handleNameChange = this.handleNameChange.bind(this);
@@ -34,8 +34,8 @@ export class InputFields extends React.Component {
     render() {
 
         // preparing list of dates for drop down select
-        let firstYear = 1850;
-        let lastYear = 2015;
+        let firstYear = 1876;
+        let lastYear = 2017;
         let years = [];
         for (let i = firstYear; i <= lastYear; i++) {
             years.push(i);
@@ -44,6 +44,7 @@ export class InputFields extends React.Component {
         const yearList = years.map((x) => {return(<option key={x}>{x}</option>)});
 
         return (
+
             <div>
                 <h1 className={"App-title"}>
                     Senior Walk
@@ -59,7 +60,7 @@ export class InputFields extends React.Component {
                     </label>
                     <br/>
                     <label>
-                        Year:
+                        Graduation Year:
                         <select value={this.state.year}
                                 onChange={this.handleYearChange}>
                             {yearList}
