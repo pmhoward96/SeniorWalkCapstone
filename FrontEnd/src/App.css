@@ -4,7 +4,11 @@
 
 .App-title {
   text-align: center;
-  background-color: #a31d16;
+  /*background-color: #a31d16;*/
+/*  background-image: url("seniorwalk2.jpeg");
+  width:100%;
+  height:250px;*/
+  font-size: 50px;
 }
 
 .App-search {
@@ -24,5 +28,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-webcolor {
+    background-color: dimgrey;
 }
 
