@@ -13,10 +13,30 @@ const mapStyles = {
 
 
 export class MapContainer extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        formDataFromChild: null
+    }
+  }
+
+  handleFormData = (formData) => {
+      this.setState({ formDataFromChild: formData })
+  }
+
   render() {
     return (
       <div className="App">
-        <InputFields />
+        <InputFields callbackFormData={this.handleFormData}/>
+
+
+          {/* this section right here is to test using data collected in InputFields child */}
+          {this.state.formDataFromChild &&
+            <h1>
+                {this.state.formDataFromChild['name'] + ' ' + this.state.formDataFromChild['year']}
+            </h1>
+          }
 
         <br/><br/><br/>
         <div>
@@ -30,6 +50,9 @@ export class MapContainer extends Component {
               }}
           />
         </div>
+
+
+
       </div>
     );
   }
