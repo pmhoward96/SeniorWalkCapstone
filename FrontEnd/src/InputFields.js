@@ -23,12 +23,21 @@ export class InputFields extends React.Component {
     }
 
     handleSubmit(event) {
-      alert('selected: ' + this.state.name + ' and ' + this.state.year);
+      // alert('selected: ' + this.state.name + ' and ' + this.state.year);
+      this.handleFormDataChange();
       event.preventDefault(); // stops page from reloading after alert
     }
 
     handleReset(event) {
         // do something
+    }
+
+    handleFormDataChange = () => {
+
+        let formData = { name: this.state.name,
+                              year: this.state.year};
+
+        this.props.callbackFormData(formData);
     }
 
     render() {
