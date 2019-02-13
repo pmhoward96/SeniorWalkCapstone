@@ -23,12 +23,21 @@ export class InputFields extends React.Component {
     }
 
     handleSubmit(event) {
-      alert('selected: ' + this.state.name + ' and ' + this.state.year);
+      // alert('selected: ' + this.state.name + ' and ' + this.state.year);
+      this.handleFormDataChange();
       event.preventDefault(); // stops page from reloading after alert
     }
 
     handleReset(event) {
         // do something
+    }
+
+    handleFormDataChange = () => {
+
+        let formData = { name: this.state.name,
+                              year: this.state.year};
+
+        this.props.callbackFormData(formData);
     }
 
     render() {
@@ -46,13 +55,28 @@ export class InputFields extends React.Component {
         return (
 
             <div>
-                <h1 className={"App-title"}>
-                    Senior Walk
-                </h1>
+                <div>
+                        <div className={"App-color2"}>
+                            <div className={"App-image"}>
+                                <img src="universitylogo2.png" alt="University Logo" width= "250px" height ="250px"></img>
+                            </div>
+                        </div>
+                        <div className={"App-color"}>
+                            <h1 className={"App-title"} >
+                                University of Arkansas
+                                <br/>Senior Walk
+                            </h1>
 
-                <form onSubmit={this.handleSubmit}
+                        </div>
+                        <div class="col-sm-1" className={"App-color2"} >
+                            <img src="hoglogo1.gif" alt="Hog Logo" width= "250px" height ="250px" align="right"></img>
+                        </div>
+
+                </div>
+                <form className={"App-button"}
+                      onSubmit={this.handleSubmit}
                       onReset={this.handleReset}>
-                    <label>
+                    <label className={"App-button"}>
                         Name:
                         <input type="text"
                                value={this.state.name}
@@ -67,8 +91,8 @@ export class InputFields extends React.Component {
                         </select>
                     </label>
                     <br/> <br/>
-                    <input type="submit" value="Submit" />
-                    <input type="reset" value="Reset" />
+                    <input className={"App"} type="submit" value="Submit" />
+                    <input className={"App"} type="reset" value="Reset" />
                 </form>
 
             </div>
