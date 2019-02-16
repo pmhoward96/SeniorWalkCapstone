@@ -11,7 +11,6 @@ const mapStyles = {
     height: 500
 };
 
-
 export class MapContainer extends Component {
 
   constructor(props) {
@@ -50,9 +49,6 @@ export class MapContainer extends Component {
               }}
           />
         </div>
-
-
-
       </div>
     );
   }
