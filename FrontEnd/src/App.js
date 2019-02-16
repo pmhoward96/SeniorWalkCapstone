@@ -33,7 +33,7 @@ export class MapContainer extends Component {
           {/* this section right here is to test using data collected in InputFields child */}
           {this.state.formDataFromChild &&
             <h1>
-                {this.state.formDataFromChild['name'] + ' ' + this.state.formDataFromChild['year']}
+                {this.state.formDataFromChild['firstName'] + ' ' + this.state.formDataFromChild['lastName'] + ' ' + this.state.formDataFromChild['year']}
             </h1>
           }
 
