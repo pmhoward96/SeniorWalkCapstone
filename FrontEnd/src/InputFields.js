@@ -5,17 +5,23 @@ export class InputFields extends React.Component {
         super(props);
 
         this.state = {
-            name: '',
+            firstName: '',
+            lastName: '',
             year: 2017
         };
 
-        this.handleNameChange = this.handleNameChange.bind(this);
+        this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
+        this.handleLastNameChange = this.handleLastNameChange.bind(this);
         this.handleYearChange = this.handleYearChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleNameChange(event) {
-        this.setState({name: event.target.value});
+    handleFirstNameChange(event) {
+        this.setState({firstName: event.target.value});
+    }
+
+    handleLastNameChange(event) {
+        this.setState({lastName: event.target.value});
     }
 
     handleYearChange(event) {
@@ -34,7 +40,8 @@ export class InputFields extends React.Component {
 
     handleFormDataChange = () => {
 
-        let formData = { name: this.state.name,
+        let formData = { firstName: this.state.firstName,
+                          lastName: this.state.lastName,
                               year: this.state.year};
 
         this.props.callbackFormData(formData);
@@ -77,10 +84,17 @@ export class InputFields extends React.Component {
                       onSubmit={this.handleSubmit}
                       onReset={this.handleReset}>
                     <label className={"App-button"}>
-                        Name:
+                        First Name:
                         <input type="text"
-                               value={this.state.name}
-                               onChange={this.handleNameChange} />
+                               value={this.state.firstName}
+                               onChange={this.handleFirstNameChange} />
+                    </label>
+                    <br/>
+                    <label className = {"App-button"}>
+                        Last Name:
+                        <input type="text"
+                               value = {this.state.lastName}
+                               onChange={this.handleLastNameChange} />
                     </label>
                     <br/>
                     <label>
