@@ -4,8 +4,6 @@ import {Map, GoogleApiWrapper } from 'google-maps-react';
 import {InputFields} from "./InputFields";
 
 
-const API_KEY = 'AIzaSyCq3H8wRUCvUdXS3qisi-t_Pa4S8yCsukA';
-
 const mapStyles = {
     width: '50  %',
     height: 500
@@ -55,5 +53,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: API_KEY
+    apiKey: process.env.REACT_APP_MAP_API_KEY
 })(MapContainer)
