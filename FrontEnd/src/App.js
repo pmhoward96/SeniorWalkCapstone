@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Map, GoogleApiWrapper } from 'google-maps-react';
+import axios from 'axios';
 import {InputFields} from "./InputFields";
 
 
@@ -14,12 +15,23 @@ export class MapContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        formDataFromChild: null
+        formDataFromChild: null,
+        locations: []
     }
   }
 
   handleFormData = (formData) => {
       this.setState({ formDataFromChild: formData })
+  }
+
+  componentDidUpdate() {
+      // this is place holder code for now, let's expand on this to perform the test
+      // need to SEND formDataFromChild and return location data.
+    axios.get('http://localhost:3000/')
+        .then(res => {
+            const locations = res.data;
+            this.setState({ locations });
+        })
   }
 
   render() {
