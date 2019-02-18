@@ -27,8 +27,13 @@ export class MapContainer extends Component {
   componentDidUpdate() {
       // this is place holder code for now, let's expand on this to perform the test
       // need to SEND formDataFromChild and return location data.
-    axios.get('http://localhost:3000/')
-        .then(res => {
+    axios.get('http://localhost:3000/',{
+        params: {
+            firstName: this.state.formDataFromChild['firstName'],
+            lastName:  this.state.formDataFromChild['lastName'],
+            year:      this.state.formDataFromChild['year']
+        }
+    }).then(res => {
             const locations = res.data;
             this.setState({ locations });
         })
