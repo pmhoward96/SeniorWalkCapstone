@@ -1,0 +1,56 @@
+.App {
+  /*text-align: center;*/
+  margin: 10px;
+}
+
+.App-title {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 5%;
+  margin: 5%;
+}
+
+.App-search {
+  margin-left: 20px;
+}
+
+.App-button {
+  width: 300px;
+  margin:0 auto;
+  display: block;
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-image {
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-top: 0px;
+  margin-bottom: 0px;
+}
+.App-color {
+  /*background-color: grey;*/
+  float: left;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5px;
+ }
+
+.App-color2 {
+  /*background-color: grey;*/
+  float: left;
+  width: 25%;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+
