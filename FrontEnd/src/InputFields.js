@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 export class InputFields extends React.Component {
     constructor(props) {
@@ -7,7 +8,8 @@ export class InputFields extends React.Component {
         this.state = {
             firstName: '',
             lastName: '',
-            year: 2017
+            year: 2017,
+            location: null
         };
 
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
@@ -29,9 +31,22 @@ export class InputFields extends React.Component {
     }
 
     handleSubmit(event) {
-      // alert('selected: ' + this.state.name + ' and ' + this.state.year);
+        event.preventDefault();
+        // here, we are using JSONplaceholder to test the form submit
+        // to test, an option is FirstName: Ervin LastName: Howell
+        // check site for others
+        axios.get('https://jsonplaceholder.typicode.com/users', {
+            params: {
+                name: this.state.firstName + " " + this.state.lastName
+            }
+        }).then( (response) => {
+            console.log(response);
+            this.setState({ location: response.data[0].address.geo });
+        }).catch(function(error){
+            console.log(error);
+        });
+
       this.handleFormDataChange();
-      event.preventDefault(); // stops page from reloading after alert
     }
 
     handleReset(event) {
@@ -40,9 +55,7 @@ export class InputFields extends React.Component {
 
     handleFormDataChange = () => {
 
-        let formData = { firstName: this.state.firstName,
-                          lastName: this.state.lastName,
-                              year: this.state.year};
+        let formData = this.state.location;
 
         this.props.callbackFormData(formData);
     }
@@ -75,7 +88,7 @@ export class InputFields extends React.Component {
                             </h1>
 
                         </div>
-                        <div class="col-sm-1" className={"App-color2"} >
+                        <div className={"App-color2"} >
                             <img src="hoglogo1.gif" alt="Hog Logo" width= "250px" height ="250px" align="right"></img>
                         </div>
 
