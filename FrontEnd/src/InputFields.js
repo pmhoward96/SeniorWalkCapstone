@@ -55,10 +55,6 @@ export class InputFields extends React.Component {
 
     handleFormDataChange = () => {
 
-        // let formData = { firstName: this.state.firstName,
-        //                   lastName: this.state.lastName,
-        //                       year: this.state.year};
-
         let formData = this.state.location;
 
         this.props.callbackFormData(formData);
