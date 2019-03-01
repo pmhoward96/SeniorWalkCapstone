@@ -50,7 +50,7 @@ export class MapContainer extends Component {
           {this.state.formDataFromChild &&
             <h1>
                 {/*{this.state.formDataFromChild['firstName'] + ' ' + this.state.formDataFromChild['lastName'] + ' ' + this.state.formDataFromChild['year']}*/}
-                { "received: " + this.state.formDataFromChild }
+                { "received: " + this.state.formDataFromChild.lat + " " + this.state.formDataFromChild.lng }
             </h1>
           }
 

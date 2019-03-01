@@ -33,13 +33,15 @@ export class InputFields extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         // here, we are using JSONplaceholder to test the form submit
+        // to test, an option is FirstName: Ervin LastName: Howell
+        // check site for others
         axios.get('https://jsonplaceholder.typicode.com/users', {
             params: {
                 name: this.state.firstName + " " + this.state.lastName
             }
         }).then( (response) => {
             console.log(response);
-            this.setState({ location: response.data[0].username });
+            this.setState({ location: response.data[0].address.geo });
         }).catch(function(error){
             console.log(error);
         });
@@ -57,7 +59,7 @@ export class InputFields extends React.Component {
         //                   lastName: this.state.lastName,
         //                       year: this.state.year};
 
-        let formData = this.state.locations;
+        let formData = this.state.location;
 
         this.props.callbackFormData(formData);
     }
