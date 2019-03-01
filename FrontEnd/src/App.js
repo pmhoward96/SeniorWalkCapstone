@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Map, GoogleApiWrapper } from 'google-maps-react';
-import axios from 'axios';
 import {InputFields} from "./InputFields";
 
 
@@ -16,27 +15,29 @@ export class MapContainer extends Component {
     super(props);
     this.state = {
         formDataFromChild: null,
-        locations: []
+        locations: [],
+        testData: []
     }
   }
 
   handleFormData = (formData) => {
       this.setState({ formDataFromChild: formData })
-  }
+  };
 
   componentDidUpdate() {
+
       // this is place holder code for now, let's expand on this to perform the test
       // need to SEND formDataFromChild and return location data.
-    axios.get('http://localhost:3000/',{
-        params: {
-            firstName: this.state.formDataFromChild['firstName'],
-            lastName:  this.state.formDataFromChild['lastName'],
-            year:      this.state.formDataFromChild['year']
-        }
-    }).then(res => {
-            const locations = res.data;
-            this.setState({ locations });
-        })
+    // axios.get('http://localhost:3000/',{
+    //     params: {
+    //         firstName: this.state.formDataFromChild['firstName'],
+    //         lastName:  this.state.formDataFromChild['lastName'],
+    //         year:      this.state.formDataFromChild['year']
+    //     }
+    // }).then(res => {
+    //         const locations = res.data;
+    //         this.setState({ locations });
+    //     })
   }
 
   render() {
@@ -48,7 +49,8 @@ export class MapContainer extends Component {
           {/* this section right here is to test using data collected in InputFields child */}
           {this.state.formDataFromChild &&
             <h1>
-                {this.state.formDataFromChild['firstName'] + ' ' + this.state.formDataFromChild['lastName'] + ' ' + this.state.formDataFromChild['year']}
+                {/*{this.state.formDataFromChild['firstName'] + ' ' + this.state.formDataFromChild['lastName'] + ' ' + this.state.formDataFromChild['year']}*/}
+                { "received: " + this.state.formDataFromChild }
             </h1>
           }
 
