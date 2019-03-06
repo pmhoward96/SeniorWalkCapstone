@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Map, GoogleApiWrapper } from 'google-maps-react';
+import {Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import {InputFields} from "./InputFields";
 
 
@@ -24,6 +24,10 @@ export class MapContainer extends Component {
       this.setState({ formDataFromChild: formData })
   };
 
+  onMarkerClick() {
+      window.alert('this is annoying')
+  }
+
   render() {
     return (
       <div className="App">
@@ -41,13 +45,29 @@ export class MapContainer extends Component {
         <div>
           <Map
               google={this.props.google}
-              zoom={18}
+              zoom={14}
               style={mapStyles}
               initialCenter={{
                   lat: 36.068185,
                   lng: -94.173392
               }}
-          />
+              className={'map'}
+              >
+              <Marker onClick={this.onMarkerClick}
+
+                      title={'Hello World'}
+                      name={'Current location'}
+                      position={{lat: 36.078185, lng: -94.173392}} />
+
+              <Marker onClick={this.onMarkerClick}
+                      title={'Hello World'}
+                      name={'Second Marker'}
+                      position={{lat: 36.059703, lng: -94.173392}} />
+              <Marker onClick={this.onMarkerClick}
+                      title={'Hello World'}
+                      name={'Third Marker'}
+                      position={{lat: 36.082391, lng: -94.173392}} />
+          </Map>
         </div>
       </div>
     );
