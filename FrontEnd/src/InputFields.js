@@ -16,6 +16,7 @@ export class InputFields extends React.Component {
         this.handleLastNameChange = this.handleLastNameChange.bind(this);
         this.handleYearChange = this.handleYearChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     handleFirstNameChange(event) {
@@ -50,7 +51,12 @@ export class InputFields extends React.Component {
     }
 
     handleReset(event) {
-        // do something
+        this.setState({
+           firstName: '',
+           lastName: '',
+           year: 2017,
+           location: null
+        });
     }
 
     handleFormDataChange = () => {
@@ -75,24 +81,6 @@ export class InputFields extends React.Component {
         return (
 
             <div>
-                <div>
-                        <div className={"App-color2"}>
-                            <div className={"App-image"}>
-                                <img src="universitylogo2.png" alt="University Logo" width= "250px" height ="250px"></img>
-                            </div>
-                        </div>
-                        <div className={"App-color"}>
-                            <h1 className={"App-title"} >
-                                University of Arkansas
-                                <br/>Senior Walk
-                            </h1>
-
-                        </div>
-                        <div className={"App-color2"} >
-                            <img src="hoglogo1.gif" alt="Hog Logo" width= "250px" height ="250px" align="right"></img>
-                        </div>
-
-                </div>
                 <form className={"App-button"}
                       onSubmit={this.handleSubmit}
                       onReset={this.handleReset}>

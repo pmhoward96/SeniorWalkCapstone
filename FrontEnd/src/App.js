@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import {Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import {InputFields} from "./InputFields";
+import {TopBanner} from "./TopBanner";
 
 
 const mapStyles = {
     width: '50  %',
-    height: 500
+    height: 700
 };
 
 export class MapContainer extends Component {
@@ -31,6 +32,7 @@ export class MapContainer extends Component {
   render() {
     return (
       <div className="App">
+          <TopBanner/>
         <InputFields callbackFormData={this.handleFormData}/>
 
 
