@@ -22,7 +22,8 @@ export class MapContainer extends Component {
   }
 
   handleFormData = (formData) => {
-      this.setState({ formDataFromChild: formData })
+      this.setState({ formDataFromChild: formData });
+      this.state.locations.append(formData); // to do: confirm this works/syntax
   };
 
   onMarkerClick() {
@@ -55,6 +56,10 @@ export class MapContainer extends Component {
               }}
               className={'map'}
               >
+
+              // to do: add for loop to iterate through this.state.locations and generate markers
+
+
               <Marker onClick={this.onMarkerClick}
 
                       title={'Hello World'}
