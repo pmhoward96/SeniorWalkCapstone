@@ -22,22 +22,17 @@ export class App extends Component {
   };
 
   render() {
-    return (
-      <div className="App">
-          <TopBanner/>
+    return <div className="App">
+        <TopBanner/>
         <InputFields callbackFormData={this.handleFormData}/>
-
-          {/* this section is to test using data collected in InputFields child */}
-          {this.state.formDataFromChild &&
-            <h1>
-                { "received: " + this.state.formDataFromChild.lat + " " + this.state.formDataFromChild.lng }
-            </h1>
-          }
-
-        <br/><br/><br/>
+        {/* this section is to test using data collected in InputFields child */}
+        {this.state.formDataFromChild &&
+        <h1>
+            {"received: " + this.state.formDataFromChild.lat + " " + this.state.formDataFromChild.lng}
+        </h1>
+        }
         <MapContainer/>
-      </div>
-    );
+    </div>;
   }
 }
 
