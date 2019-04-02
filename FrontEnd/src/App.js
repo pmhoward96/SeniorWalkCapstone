@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
-import {InputFields} from "./InputFields";
-import {TopBanner} from "./TopBanner";
+import {InputFields}  from "./InputFields";
+import {TopBanner}    from "./TopBanner";
+import MapContainer   from "./MapContainer";
 
 
-const mapStyles = {
-    width: '50  %',
-    height: 700
-};
-
-export class MapContainer extends Component {
+export class App extends Component {
 
   constructor(props) {
     super(props);
@@ -23,12 +18,8 @@ export class MapContainer extends Component {
 
   handleFormData = (formData) => {
       this.setState({ formDataFromChild: formData });
-      this.state.locations.append(formData); // to do: confirm this works/syntax
+      // this.state.locations.append(formData); // to do: confirm this works/syntax
   };
-
-  onMarkerClick() {
-      window.alert('this is annoying')
-  }
 
   render() {
     return (
@@ -36,8 +27,7 @@ export class MapContainer extends Component {
           <TopBanner/>
         <InputFields callbackFormData={this.handleFormData}/>
 
-
-          {/* this section right here is to test using data collected in InputFields child */}
+          {/* this section is to test using data collected in InputFields child */}
           {this.state.formDataFromChild &&
             <h1>
                 { "received: " + this.state.formDataFromChild.lat + " " + this.state.formDataFromChild.lng }
@@ -45,42 +35,9 @@ export class MapContainer extends Component {
           }
 
         <br/><br/><br/>
-        <div>
-          <Map
-              google={this.props.google}
-              zoom={14}
-              style={mapStyles}
-              initialCenter={{
-                  lat: 36.068185,
-                  lng: -94.173392
-              }}
-              className={'map'}
-              >
-
-              // to do: add for loop to iterate through this.state.locations and generate markers
-
-
-              <Marker onClick={this.onMarkerClick}
-
-                      title={'Hello World'}
-                      name={'Current location'}
-                      position={{lat: 36.078185, lng: -94.173392}} />
-
-              <Marker onClick={this.onMarkerClick}
-                      title={'Hello World'}
-                      name={'Second Marker'}
-                      position={{lat: 36.059703, lng: -94.173392}} />
-              <Marker onClick={this.onMarkerClick}
-                      title={'Hello World'}
-                      name={'Third Marker'}
-                      position={{lat: 36.082391, lng: -94.173392}} />
-          </Map>
-        </div>
+        <MapContainer/>
       </div>
     );
   }
 }
 
-export default GoogleApiWrapper({
-    apiKey: process.env.REACT_APP_MAP_API_KEY
-})(MapContainer)
