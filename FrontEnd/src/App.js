@@ -10,14 +10,14 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        formDataFromChild: null,
+        inputData: null,
         locations: [],
         testData: []
     }
   }
 
   handleFormData = (formData) => {
-      this.setState({ formDataFromChild: formData });
+      this.setState({ inputData: formData });
       // this.state.locations.append(formData); // to do: confirm this works/syntax
   };
 
@@ -26,9 +26,9 @@ export class App extends Component {
         <TopBanner/>
         <InputFields callbackFormData={this.handleFormData}/>
         {/* this section is to test using data collected in InputFields child */}
-        {this.state.formDataFromChild &&
+        {this.state.inputData &&
         <h1>
-            {"received: " + this.state.formDataFromChild.lat + " " + this.state.formDataFromChild.lng}
+            {"received: " + this.state.inputData.lat + " " + this.state.inputData.lng + " " + this.state.inputData.year}
         </h1>
         }
         <MapContainer/>
