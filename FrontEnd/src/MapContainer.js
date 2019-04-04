@@ -8,10 +8,6 @@ const mapStyles = {
 };
 
 export class MapContainer extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     static onMarkerClick() {
         window.alert('this is annoying')
     }

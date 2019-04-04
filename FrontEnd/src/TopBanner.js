@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-export class TopBanner extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
+export class TopBanner extends Component {
     render() {
         return (
             <div>

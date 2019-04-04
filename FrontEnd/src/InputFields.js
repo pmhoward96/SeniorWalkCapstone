@@ -9,7 +9,8 @@ export class InputFields extends React.Component {
             firstName: '',
             lastName: '',
             year: 2017,
-            location: null
+            lat: -1,
+            lng: -1
         };
 
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
@@ -42,12 +43,20 @@ export class InputFields extends React.Component {
             }
         }).then( (response) => {
             console.log(response);
-            this.setState({ location: response.data[0].address.geo });
+            console.log(response.data[0].address.geo.lat);
+            this.setState({ lat: response.data[0].address.geo.lat});
+            this.setState({ lng: response.data[0].address.geo.lng}, () => {
+                // this callback function is so that the state is updated before passing data back
+                // necessary because setState() is asynchronous 
+                this.handleFormDataChange();
+            }
+            );
+
         }).catch(function(error){
             console.log(error);
         });
 
-      this.handleFormDataChange();
+      // this.handleFormDataChange();
     }
 
     handleReset(event) {
@@ -59,9 +68,12 @@ export class InputFields extends React.Component {
         });
     }
 
+    // returns lat, lng, and year info to App.js
     handleFormDataChange = () => {
-
-        let formData = this.state.location;
+        console.log(this.state);
+        let formData = { lat:  this.state.lat,
+                         lng:  this.state.lng,
+                         year: this.state.year};
 
         this.props.callbackFormData(formData);
     }
