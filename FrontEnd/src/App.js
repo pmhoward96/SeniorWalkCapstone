@@ -11,27 +11,31 @@ export class App extends Component {
     super(props);
     this.state = {
         inputData: null,
-        locations: [],
-        testData: []
+        locations: []
     }
+
+    this.handleFormData = this.handleFormData.bind(this);
+    this.render = this.render.bind(this);
   }
 
   handleFormData = (formData) => {
       this.setState({ inputData: formData });
-      // this.state.locations.append(formData); // to do: confirm this works/syntax
+
+      // attach form data to start of locations array in state
+      this.setState(state => {
+          const locations = [...state.locations, state.inputData];
+          return {
+              locations,
+              formData: '',
+          };
+      });
   };
 
   render() {
     return <div className="App">
         <TopBanner/>
         <InputFields callbackFormData={this.handleFormData}/>
-        {/* this section is to test using data collected in InputFields child */}
-        {this.state.inputData &&
-        <h1>
-            {"received: " + this.state.inputData.lat + " " + this.state.inputData.lng + " " + this.state.inputData.year}
-        </h1>
-        }
-        <MapContainer/>
+        <MapContainer locations={this.state.locations}/>
     </div>;
   }
 }

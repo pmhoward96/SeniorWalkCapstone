@@ -8,11 +8,24 @@ const mapStyles = {
 };
 
 export class MapContainer extends Component {
-    static onMarkerClick() {
-        window.alert('this is annoying')
+    constructor(props) {
+        super(props);
+
+        this.render = this.render.bind(this);
     }
 
     render() {
+        // convert array of location objects to a set of <Marker> to render
+        let markers = this.props.locations.map((object, i) => {
+           return(
+            <Marker
+                key={i}
+                title={object.firstName + " " + object.lastName}
+                position={{lat: parseFloat(object.lat), lng: parseFloat(object.lng)}}
+            />
+           );
+        });
+
         return (
             <div>
                 <Map
@@ -26,23 +39,8 @@ export class MapContainer extends Component {
                     className={'map'}
                 >
 
-                    {/*to do: add for loop to iterate through this.state.locations and generate markers*/}
+                    {markers}
 
-
-                    <Marker onClick={MapContainer.onMarkerClick}
-
-                            title={'Hello World'}
-                            name={'Current location'}
-                            position={{lat: 36.078185, lng: -94.173392}} />
-
-                    <Marker onClick={MapContainer.onMarkerClick}
-                            title={'Hello World'}
-                            name={'Second Marker'}
-                            position={{lat: 36.059703, lng: -94.173392}} />
-                    <Marker onClick={MapContainer.onMarkerClick}
-                            title={'Hello World'}
-                            name={'Third Marker'}
-                            position={{lat: 36.082391, lng: -94.173392}} />
                 </Map>
             </div>
         );
