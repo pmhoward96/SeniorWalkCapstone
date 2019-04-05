@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export class InputFields extends React.Component {
     constructor(props) {
+
         super(props);
 
         this.state = {
@@ -32,6 +33,8 @@ export class InputFields extends React.Component {
         this.setState({year: event.target.value});
     }
 
+
+
     handleSubmit(event) {
         event.preventDefault();
         // here, we are using JSONplaceholder to test the form submit
@@ -54,6 +57,9 @@ export class InputFields extends React.Component {
         }).catch(function(error){
             console.log(error);
         });
+const data = this.state
+        console.log(data);
+
     }
 
     // clear form data and call function in App.js to clear stored data
@@ -80,6 +86,11 @@ export class InputFields extends React.Component {
     }
 
     render() {
+        const {firstName} = this.state;
+        const {lat} = this.state;
+        const {lng} = this.state;
+        const {year} = this.state;
+
 
         // preparing list of dates for drop down select
         let firstYear = 1876;
@@ -94,9 +105,16 @@ export class InputFields extends React.Component {
         return (
 
             <div>
+
+
+
+
+
                 <form className={"App-button"}
                       onSubmit={this.handleSubmit}
                       onReset={this.handleReset}>
+
+
                     <label className={"App-button"}>
                         First Name:
                         <input type="text"
@@ -111,18 +129,25 @@ export class InputFields extends React.Component {
                                onChange={this.handleLastNameChange} />
                     </label>
                     <br/>
-                    <label>
+                    <label class = {"grad-button"}>
                         Graduation Year:
                         <select value={this.state.year}
                                 onChange={this.handleYearChange}>
                             {yearList}
                         </select>
-                    </label>
+
                     <br/> <br/>
                     <input className={"App"} type="submit" value="Submit" />
                     <input className={"App"} type="reset" value="Reset" />
-                </form>
+                    </label>
 
+                </form>
+                <div class="container">
+                <div>First name is: {firstName}</div>
+                <div>Year: {year}</div>
+                <div>Lat: {lat}</div>
+                <div>Lng: {lng}</div>
+                </div>
             </div>
         );
     }
