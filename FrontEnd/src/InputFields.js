@@ -43,11 +43,10 @@ export class InputFields extends React.Component {
             }
         }).then( (response) => {
             console.log(response);
-            console.log(response.data[0].address.geo.lat);
             this.setState({ lat: response.data[0].address.geo.lat});
             this.setState({ lng: response.data[0].address.geo.lng}, () => {
                 // this callback function is so that the state is updated before passing data back
-                // necessary because setState() is asynchronous 
+                // necessary because setState() is asynchronous
                 this.handleFormDataChange();
             }
             );
@@ -55,8 +54,6 @@ export class InputFields extends React.Component {
         }).catch(function(error){
             console.log(error);
         });
-
-      // this.handleFormDataChange();
     }
 
     handleReset(event) {
@@ -70,10 +67,11 @@ export class InputFields extends React.Component {
 
     // returns lat, lng, and year info to App.js
     handleFormDataChange = () => {
-        console.log(this.state);
-        let formData = { lat:  this.state.lat,
-                         lng:  this.state.lng,
-                         year: this.state.year};
+        let formData = { firstName: this.state.firstName,
+                         lastName:  this.state.lastName,
+                         lat:       this.state.lat,
+                         lng:       this.state.lng,
+                         year:      this.state.year};
 
         this.props.callbackFormData(formData);
     }
