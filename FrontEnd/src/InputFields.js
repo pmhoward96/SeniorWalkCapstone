@@ -56,6 +56,7 @@ export class InputFields extends React.Component {
         });
     }
 
+    // clear form data and call function in App.js to clear stored data
     handleReset(event) {
         this.setState({
            firstName: '',
@@ -63,6 +64,8 @@ export class InputFields extends React.Component {
            year: 2017,
            location: null
         });
+
+        this.props.callbackReset();
     }
 
     // returns lat, lng, and year info to App.js
