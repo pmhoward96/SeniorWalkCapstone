@@ -1,3 +1,11 @@
+element.style
+{
+position: absolute;
+  width: 100%;
+  height: 200px;
+
+}
+
 .App {
   /*text-align: center;*/
   margin: 10px;
@@ -86,9 +94,10 @@
 .container {
   position: relative;
   float: right;
-  right: 50px;
+  right: 175px;
+  text-align: center;
   top: 20px;
-  width: 700px;
+  width: 350px;
   height: 300px;
   border: 3px solid black;
  background-color: darkred;

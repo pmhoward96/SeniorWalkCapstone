@@ -137,14 +137,17 @@ const data = this.state
                         </select>
 
                     <br/> <br/>
+
                     <input className={"App"} type="submit" value="Submit" />
                     <input className={"App"} type="reset" value="Reset" />
                     </label>
 
                 </form>
+
                 <div class="container">
+
+                    <h2>Your Location Information:</h2>
                 <div>First name is: {firstName}</div>
-                <div>Year: {year}</div>
                 <div>Lat: {lat}</div>
                 <div>Lng: {lng}</div>
                 </div>
