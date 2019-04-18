@@ -1,3 +1,11 @@
+element.style
+{
+position: absolute;
+  width: 100%;
+  height: 200px;
+
+}
+
 .App {
   /*text-align: center;*/
   margin: 10px;
@@ -23,8 +31,15 @@
   display: block;
   text-align: center;
   position: relative;
-  left: -16px;
+  left: 266px;
+  top: 24px;
   font-family: "Bookman Old Style"
+}
+
+.grad-button {
+  position: relative;
+  top: 30px;
+  left: 260px;
 }
 
 .App-header {
@@ -68,10 +83,7 @@
 }
 
 
-.centerGrad {
-  position: relative;
-  left: 24px;
-}
+
 
 .centerName
 {
@@ -80,3 +92,19 @@
 
 }
 
+.container {
+  position: relative;
+  float: right;
+  right: 110px;
+  text-align: center;
+  top: 45px;
+  width: 350px;
+  height: 300px;
+  border: 3px solid black;
+ background-color: darkred;
+  opacity: .7;
+  color: white;
+  margin: 0;
+  padding: 0;
+
+}

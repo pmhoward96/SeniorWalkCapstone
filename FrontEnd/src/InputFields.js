@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export class InputFields extends React.Component {
     constructor(props) {
+
         super(props);
 
         this.state = {
@@ -32,28 +33,50 @@ export class InputFields extends React.Component {
         this.setState({year: event.target.value});
     }
 
-    handleSubmit(event) {
+
+
+    async handleSubmit(event) {
         event.preventDefault();
         // here, we are using JSONplaceholder to test the form submit
         // to test, an option is FirstName: Ervin LastName: Howell
         // check site for others
-        axios.get('https://jsonplaceholder.typicode.com/users', {
-            params: {
-                name: this.state.firstName + " " + this.state.lastName
-            }
-        }).then( (response) => {
-            console.log(response);
-            this.setState({ lat: response.data[0].address.geo.lat});
-            this.setState({ lng: response.data[0].address.geo.lng}, () => {
+        // axios.get('https://jsonplaceholder.typicode.com/users', {
+        //     params: {
+        //         name: this.state.firstName + " " + this.state.lastName
+        //     }
+        // }).then( (response) => {
+        //     console.log(response);
+        //     this.setState({ lat: response.data[0].address.geo.lat});
+        //     this.setState({ lng: response.data[0].address.geo.lng}, () => {
+        //         // this callback function is so that the state is updated before passing data back
+        //         // necessary because setState() is asynchronous
+        //         this.handleFormDataChange();
+        //     });
+        //
+        // }).catch(function(error){
+        //     console.log(error);
+        // });
+
+        try {
+            const response = await axios.post('/api/latlong', {
+                firstname: this.state.firstName,
+                lastname: this.state.lastname,
+                year: this.state.year
+            });
+
+            this.setState({ lat: response.data.latitude});
+            this.setState({ lng: response.data.longitude}, () => {
                 // this callback function is so that the state is updated before passing data back
                 // necessary because setState() is asynchronous
                 this.handleFormDataChange();
-            }
-            );
+            });
+        } catch (err) {
+            console.log(err);
+        }
 
-        }).catch(function(error){
-            console.log(error);
-        });
+const data = this.state
+        console.log(data);
+
     }
 
     // clear form data and call function in App.js to clear stored data
@@ -80,6 +103,11 @@ export class InputFields extends React.Component {
     }
 
     render() {
+        const {firstName} = this.state;
+        const {lat} = this.state;
+        const {lng} = this.state;
+        const {year} = this.state;
+
 
         // preparing list of dates for drop down select
         let firstYear = 1876;
@@ -92,11 +120,12 @@ export class InputFields extends React.Component {
         const yearList = years.map((x) => {return(<option key={x}>{x}</option>)});
 
         return (
-
             <div>
                 <form className={"App-button"}
                       onSubmit={this.handleSubmit}
                       onReset={this.handleReset}>
+
+
                     <label className={"App-button"}>
                         First Name:
                         <input type="text"
@@ -111,18 +140,28 @@ export class InputFields extends React.Component {
                                onChange={this.handleLastNameChange} />
                     </label>
                     <br/>
-                    <label>
+                    <label class = {"grad-button"}>
                         Graduation Year:
                         <select value={this.state.year}
                                 onChange={this.handleYearChange}>
                             {yearList}
                         </select>
-                    </label>
+
                     <br/> <br/>
+
                     <input className={"App"} type="submit" value="Submit" />
                     <input className={"App"} type="reset" value="Reset" />
+                    </label>
+
                 </form>
 
+                <div class="container">
+
+                    <h2>Search Results:</h2>
+                {/*<div>First name is: {firstName}</div>*/}
+                {/*<div>Lat: {lat}</div>*/}
+                {/*<div>Lng: {lng}</div>*/}
+                </div>
             </div>
         );
     }
