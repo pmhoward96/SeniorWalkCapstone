@@ -35,28 +35,45 @@ export class InputFields extends React.Component {
 
 
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         event.preventDefault();
         // here, we are using JSONplaceholder to test the form submit
         // to test, an option is FirstName: Ervin LastName: Howell
         // check site for others
-        axios.get('https://jsonplaceholder.typicode.com/users', {
-            params: {
-                name: this.state.firstName + " " + this.state.lastName
-            }
-        }).then( (response) => {
-            console.log(response);
-            this.setState({ lat: response.data[0].address.geo.lat});
-            this.setState({ lng: response.data[0].address.geo.lng}, () => {
+        // axios.get('https://jsonplaceholder.typicode.com/users', {
+        //     params: {
+        //         name: this.state.firstName + " " + this.state.lastName
+        //     }
+        // }).then( (response) => {
+        //     console.log(response);
+        //     this.setState({ lat: response.data[0].address.geo.lat});
+        //     this.setState({ lng: response.data[0].address.geo.lng}, () => {
+        //         // this callback function is so that the state is updated before passing data back
+        //         // necessary because setState() is asynchronous
+        //         this.handleFormDataChange();
+        //     });
+        //
+        // }).catch(function(error){
+        //     console.log(error);
+        // });
+
+        try {
+            const response = await axios.post('/api/latlong', {
+                firstname: this.state.firstName,
+                lastname: this.state.lastname,
+                year: this.state.year
+            });
+
+            this.setState({ lat: response.data.latitude});
+            this.setState({ lng: response.data.longitude}, () => {
                 // this callback function is so that the state is updated before passing data back
                 // necessary because setState() is asynchronous
                 this.handleFormDataChange();
-            }
-            );
+            });
+        } catch (err) {
+            console.log(err);
+        }
 
-        }).catch(function(error){
-            console.log(error);
-        });
 const data = this.state
         console.log(data);
 
@@ -103,13 +120,7 @@ const data = this.state
         const yearList = years.map((x) => {return(<option key={x}>{x}</option>)});
 
         return (
-
             <div>
-
-
-
-
-
                 <form className={"App-button"}
                       onSubmit={this.handleSubmit}
                       onReset={this.handleReset}>
@@ -146,10 +157,10 @@ const data = this.state
 
                 <div class="container">
 
-                    <h2>Your Location Information:</h2>
-                <div>First name is: {firstName}</div>
-                <div>Lat: {lat}</div>
-                <div>Lng: {lng}</div>
+                    <h2>Search Results:</h2>
+                {/*<div>First name is: {firstName}</div>*/}
+                {/*<div>Lat: {lat}</div>*/}
+                {/*<div>Lng: {lng}</div>*/}
                 </div>
             </div>
         );

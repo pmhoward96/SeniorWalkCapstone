@@ -32,12 +32,13 @@ position: absolute;
   text-align: center;
   position: relative;
   left: 266px;
-  top: 4px;
+  top: 24px;
   font-family: "Bookman Old Style"
 }
 
 .grad-button {
   position: relative;
+  top: 30px;
   left: 260px;
 }
 
@@ -94,9 +95,9 @@ position: absolute;
 .container {
   position: relative;
   float: right;
-  right: 175px;
+  right: 110px;
   text-align: center;
-  top: 20px;
+  top: 45px;
   width: 350px;
   height: 300px;
   border: 3px solid black;
