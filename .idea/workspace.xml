@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8d10524-3033-418f-bfe5-92a61ac4e70a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/InputFields.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/InputFields.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/MapContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/MapContainer.js" afterDir="false" />
-    </list>
+    <list default="true" id="b8d10524-3033-418f-bfe5-92a61ac4e70a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -88,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FrontEnd/src/MapContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="55" column="18" lean-forward="true" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+            <state relative-caret-position="330">
+              <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -195,20 +190,28 @@
       <workItem from="1554479873473" duration="7244000" />
       <workItem from="1554921523021" duration="3341000" />
       <workItem from="1555378264078" duration="1867000" />
-      <workItem from="1555621155151" duration="10095000" />
+      <workItem from="1555621155151" duration="10514000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed the stretching bug, got rid of extra spacing, and scaled map down">
+      <created>1555692868717</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555692868718</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28006000" />
+    <option name="totallyTimeSpent" value="28425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3848" y="5" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2028451" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2028451" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.32998884" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.31661093" />
@@ -218,7 +221,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49963316" weight="0.3400223" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49963316" visible="true" weight="0.3400223" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50036687" side_tool="true" weight="0.3297546" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -246,6 +249,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed the stretching bug, got rid of extra spacing, and scaled map down" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the stretching bug, got rid of extra spacing, and scaled map down" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FrontEnd/src/serviceWorker.js">
@@ -312,8 +319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FrontEnd/src/MapContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="55" column="18" lean-forward="true" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+        <state relative-caret-position="330">
+          <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
