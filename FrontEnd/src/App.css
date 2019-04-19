@@ -1,14 +1,7 @@
-element.style
-{
-position: absolute;
-  width: 100%;
-  height: 200px;
-
-}
 
 .App {
-  /*text-align: center;*/
-  margin: 10px;
+
+
 }
 
 .App-title {
@@ -26,20 +19,24 @@ position: absolute;
 }
 
 .App-button {
-  width: 300px;
-  margin:0 auto;
-  display: block;
+
+width: 200px;
+  float: right;
+  margin: 0px;
+  padding: 0px;
   text-align: center;
   position: relative;
-  left: 266px;
-  top: 24px;
-  font-family: "Bookman Old Style"
+  font-family: "Bookman Old Style";
+  display: flex;
+  flex-direction: column;
+  right: 50px;
 }
 
 .grad-button {
   position: relative;
-  top: 30px;
-  left: 260px;
+  right: 50px;
+
+
 }
 
 .App-header {
@@ -93,18 +90,22 @@ position: absolute;
 }
 
 .container {
+
+  display: flex;
+  flex-direction: column;
   position: relative;
-  float: right;
-  right: 110px;
   text-align: center;
-  top: 45px;
-  width: 350px;
-  height: 300px;
+  float: right;
+  max-height: 100%;
+  max-width: 270px;
   border: 3px solid black;
  background-color: darkred;
   opacity: .7;
   color: white;
   margin: 0;
   padding: 0;
+  top: 250px;
+  left: 140px;
 
 }
+

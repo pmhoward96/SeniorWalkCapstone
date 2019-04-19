@@ -33,8 +33,6 @@ export class InputFields extends React.Component {
         this.setState({year: event.target.value});
     }
 
-
-
     async handleSubmit(event) {
         event.preventDefault();
         // here, we are using JSONplaceholder to test the form submit
@@ -74,7 +72,7 @@ export class InputFields extends React.Component {
             console.log(err);
         }
 
-const data = this.state
+        const data = this.state;
         console.log(data);
 
     }
@@ -125,7 +123,6 @@ const data = this.state
                       onSubmit={this.handleSubmit}
                       onReset={this.handleReset}>
 
-
                     <label className={"App-button"}>
                         First Name:
                         <input type="text"
@@ -157,10 +154,9 @@ const data = this.state
 
                 <div class="container">
 
-                    <h2>Search Results:</h2>
-                {/*<div>First name is: {firstName}</div>*/}
-                {/*<div>Lat: {lat}</div>*/}
-                {/*<div>Lng: {lng}</div>*/}
+                <div>Current Name: {firstName}</div>
+                <div>Current Pin Latitude: {lat}</div>
+                <div>Current Pin Longitude: {lng}</div>
                 </div>
             </div>
         );
