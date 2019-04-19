@@ -114,7 +114,6 @@ const data = this.state
                       onSubmit={this.handleSubmit}
                       onReset={this.handleReset}>
 
-
                     <label className={"App-button"}>
                         First Name:
                         <input type="text"
@@ -146,10 +145,9 @@ const data = this.state
 
                 <div class="container">
 
-                    <h2>Your Location Information:</h2>
-                <div>First name is: {firstName}</div>
-                <div>Lat: {lat}</div>
-                <div>Lng: {lng}</div>
+                <div>Current Name: {firstName}</div>
+                <div>Current Pin Latitude: {lat}</div>
+                <div>Current Pin Longitude: {lng}</div>
                 </div>
             </div>
         );

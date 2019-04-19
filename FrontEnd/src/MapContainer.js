@@ -3,12 +3,18 @@ import './App.css';
 import {Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const mapStyles = {
+    position: 'absolute',
+  maxHeight: '1000px',
+    maxWidth: '1500px',
+    top: '270px',
+
+
+    /*
     width: 1080,
     height: 600,
-    top: -180,
     margin: 0,
     padding: 0
-
+*/
 };
 
 export class MapContainer extends Component {
@@ -19,6 +25,7 @@ export class MapContainer extends Component {
     }
 
     render() {
+
         // convert array of location objects to a set of <Marker> to render
         let markers = this.props.locations.map((object, i) => {
            return(
@@ -31,11 +38,13 @@ export class MapContainer extends Component {
         });
 
         return (
-            <div>
-                <Map
+             <div style={{position: 'absolute', height: '70%', width: '70%', top: '270px'}}>
+
+            <Map
+
+
                     google={this.props.google}
                     zoom={14}
-                    style={mapStyles}
                     initialCenter={{
                         lat: 36.068185,
                         lng: -94.173392
@@ -44,11 +53,11 @@ export class MapContainer extends Component {
                 >
 
                     {markers}
-
-                </Map>
+            </Map>
             </div>
         );
-    }
+
+            }
 
 }
 
