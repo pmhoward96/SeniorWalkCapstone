@@ -3,11 +3,10 @@ import './App.css';
 import {Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const mapStyles = {
-    position: 'absolute',
-  maxHeight: '1000px',
-    maxWidth: '1500px',
-    top: '270px',
-
+    position:  'absolute',
+    maxHeight: '1000px',
+    maxWidth:  '1500px',
+    top:       '270px',
 
     /*
     width: 1080,
@@ -39,10 +38,7 @@ export class MapContainer extends Component {
 
         return (
              <div style={{position: 'absolute', height: '70%', width: '70%', top: '270px'}}>
-
-            <Map
-
-
+                <Map
                     google={this.props.google}
                     zoom={18}
                     initialCenter={{
@@ -53,12 +49,11 @@ export class MapContainer extends Component {
                 >
 
                     {markers}
-            </Map>
+
+                </Map>
             </div>
         );
-
-            }
-
+    }
 }
 
 export default GoogleApiWrapper({

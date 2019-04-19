@@ -118,13 +118,7 @@ export class InputFields extends React.Component {
         const yearList = years.map((x) => {return(<option key={x}>{x}</option>)});
 
         return (
-
             <div>
-
-
-
-
-
                 <form className={"App-button"}
                       onSubmit={this.handleSubmit}
                       onReset={this.handleReset}>
