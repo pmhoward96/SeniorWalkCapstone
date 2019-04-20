@@ -7,7 +7,7 @@ export class TopBanner extends Component {
             <div>
                 <div className={"App-color2"}>
                     <div className={"App-image"}>
-                        <img src="universitylogo2.png" alt="University Logo" width= "250px" height ="250px"></img>
+                        <img src="static/img/universitylogo2.png" alt="University Logo" width= "250px" height ="250px"></img>
                     </div>
                 </div>
                 <div className={"App-color"}>
@@ -18,7 +18,7 @@ export class TopBanner extends Component {
 
                 </div>
                 <div className={"App-color2"} >
-                    <img src="hoglogo1.gif" alt="Hog Logo" width= "250px" height ="250px" align="right"></img>
+                    <img src="static/img/hoglogo1.gif" alt="Hog Logo" width= "250px" height ="250px" align="right"></img>
                 </div>
 
             </div>
